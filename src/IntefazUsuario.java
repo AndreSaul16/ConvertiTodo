@@ -4,6 +4,8 @@ public class IntefazUsuario {
     public void menu() {
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
+        ConversorDivisas conversorDivisas = new ConversorDivisas();
+        ConversorPesos conversorPesos = new ConversorPesos();
 
         do {
             System.out.println("====================================");
@@ -13,18 +15,26 @@ public class IntefazUsuario {
             System.out.println("Por favor, elige una opción:");
             System.out.println("1. Convertir Divisas");
             System.out.println("2. Convertir Medidas de Distancia");
-            System.out.println("3. Salir");
+            System.out.println("3. Convertir Unidades de Peso");
+            System.out.println("4. Actualizar Tasas de Cambio de Divisas");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
 
             switch (opcion) {
                 case 1:
-                    convertirDivisas(scanner);
+                    conversorDivisas.convertirDivisas(scanner);
                     break;
                 case 2:
-                    convertirDistancia(scanner);
+                    //conversorDistancias(scanner);
                     break;
                 case 3:
+                    conversorPesos.convertirUnidadesDeMedida();
+                    break;
+                case 4:
+                    conversorDivisas.actualizarTasasDeCambio(scanner);
+                    break;
+                case 5:
                     continuar = false;
                     System.out.println("Saliendo del programa...");
                     break;
