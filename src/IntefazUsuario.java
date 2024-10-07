@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import ConversorDivisas;
 
 public class IntefazUsuario {
     public void menu() {
@@ -19,10 +20,11 @@ public class IntefazUsuario {
 
             switch (opcion) {
                 case 1:
-                    convertirDivisas(scanner);
+                    ConversorDivisas conversor = new ConversorDivisas();
+                    conversor.convertirDivisas(scanner);
                     break;
                 case 2:
-                    convertirDistancia(scanner);
+                    //convertirDistancia(scanner);
                     break;
                 case 3:
                     continuar = false;
