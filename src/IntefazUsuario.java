@@ -6,6 +6,7 @@ public class IntefazUsuario {
         boolean continuar = true;
         ConversorDivisas conversorDivisas = new ConversorDivisas();
         ConversorPesos conversorPesos = new ConversorPesos();
+        LimpiarConsola limpiarConsola = new LimpiarConsola();
 
         do {
             System.out.println("====================================");
@@ -21,6 +22,7 @@ public class IntefazUsuario {
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
 
+
             switch (opcion) {
                 case 1:
                     conversorDivisas.convertirDivisas(scanner);
@@ -35,6 +37,9 @@ public class IntefazUsuario {
                     conversorDivisas.actualizarTasasDeCambio(scanner);
                     break;
                 case 5:
+                    limpiarConsola.limpiar();
+                    break;
+                case 6:
                     continuar = false;
                     System.out.println("Saliendo del programa...");
                     break;

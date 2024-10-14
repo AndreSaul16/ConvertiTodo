@@ -1,5 +1,6 @@
 class ConvertiTodo {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        IntefazUsuario interfaz = new IntefazUsuario();
+        interfaz.menu();
     }
 }
