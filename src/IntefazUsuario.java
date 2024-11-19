@@ -5,8 +5,11 @@ public class IntefazUsuario {
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
         ConversorDivisas conversorDivisas = new ConversorDivisas();
+        ConversorDistancias conversorDistancias = new ConversorDistancias();
         ConversorPesos conversorPesos = new ConversorPesos();
         LimpiarConsola limpiarConsola = new LimpiarConsola();
+        ConversorTemperaturas temperaturas = new ConversorTemperaturas();
+        ConversorPerzonalizado customizable = new ConversorPerzonalizado();
 
         do {
             System.out.println("====================================");
@@ -17,8 +20,11 @@ public class IntefazUsuario {
             System.out.println("1. Convertir Divisas");
             System.out.println("2. Convertir Medidas de Distancia");
             System.out.println("3. Convertir Unidades de Peso");
-            System.out.println("4. Actualizar Tasas de Cambio de Divisas");
-            System.out.println("5. Salir");
+            System.out.println("4. Convertir Temperaturas");
+            System.out.println("5. Actualizar Tasas de Cambio de Divisas");
+            System.out.println("6. Conversor Personalizado");
+            System.out.println("7. Limpiar consola");
+            System.out.println("8. Salir");
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
 
@@ -28,18 +34,22 @@ public class IntefazUsuario {
                     conversorDivisas.convertirDivisas(scanner);
                     break;
                 case 2:
-                    //conversorDistancias(scanner);
+                    conversorDistancias.convertirDistancia(scanner);
                     break;
                 case 3:
-                    conversorPesos.convertirUnidadesDeMedida();
+                    conversorPesos.convertirUnidadesDePesos();
                     break;
                 case 4:
+                    temperaturas.convertirTemperatura(scanner);
+                case 5:
                     conversorDivisas.actualizarTasasDeCambio(scanner);
                     break;
-                case 5:
-                    limpiarConsola.limpiar();
-                    break;
                 case 6:
+                    customizable.customizableConversor(scanner);
+                    break;
+                case 7:
+                    limpiarConsola.limpiar();
+                case 8:
                     continuar = false;
                     System.out.println("Saliendo del programa...");
                     break;
